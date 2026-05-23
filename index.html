@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Sync</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1f1d1d;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 28px 55px;
+    }
+
+    .logo {
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .socials {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .socials a {
+      width: 38px;
+      height: 38px;
+      background: #2b2929;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      background: #3a3a3a;
+      transform: translateY(-2px);
+    }
+
+    .socials img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      gap: 34px;
+      align-items: flex-start;
+      font-size: 20px;
+    }
+
+    .nav-item {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-title {
+      margin-bottom: 18px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 180px;
+      text-align: center;
+      background: rgba(30, 30, 30, 0.95);
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 14px;
+      line-height: 1.8;
+      font-size: 16px;
+      z-index: 10;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a,
+    .dropdown p {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 4px 0;
+    }
+
+    .main {
+      max-width: 760px;
+      margin: 110px auto 0;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .profile {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 35px;
+      border: 2px solid #3a3a3a;
+    }
+
+    .about {
+      font-size: 20px;
+      line-height: 1.55;
+      color: #f1f1f1;
+    }
+
+    .side-links {
+      position: fixed;
+      right: 55px;
+      bottom: 45px;
+      text-align: left;
+      font-size: 22px;
+      line-height: 2.2;
+    }
+
+    .side-links a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-links a:hover {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        padding: 25px;
+        gap: 35px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 22px;
+        font-size: 18px;
+      }
+
+      .logo {
+        font-size: 36px;
+      }
+
+      .main {
+        margin-top: 50px;
+      }
+
+      .about {
+        font-size: 17px;
+      }
+
+      .side-links {
+        position: static;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <div class="logo">Shivam Sync</div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/syncrational/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+
+        <a href="#" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X">
+        </a>
+
+        <a href="#" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-item">
+        <div class="nav-title">Home</div>
+      </div>
+
+      <div class="nav-item">
+        <div class="nav-title">Certifications</div>
+        <div class="dropdown">
+          <a href="https://skillsbuild.org" target="_blank">IBM SkillsBuild</a>
+          <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
+          <a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a>
+          <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank">Google Digital Garage</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <div class="nav-title">Letters</div>
+        <div class="dropdown">
+          <p>Built while learning</p>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <div class="nav-title">Toolkit</div>
+        <div class="dropdown">
+          <a href="https://code.visualstudio.com" target="_blank">VS Code</a>
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://vercel.com" target="_blank">Vercel</a>
+          <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+          <a href="https://www.figma.com" target="_blank">Figma</a>
+          <a href="https://www.notion.so" target="_blank">Notion</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <div class="nav-title">⚙</div>
+        <div class="dropdown">
+          <p>Profile</p>
+          <p>Sign Up</p>
+          <p>Sign In</p>
+          <p>Privacy</p>
+          <p>Account</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <img src="profile.jpg" alt="Profile Image" class="profile" />
+
+    <p class="about">
+      Welcome. I’m Shivam — exploring technology, creativity, and the process
+      of building things step by step. This space is a small collection of ideas,
+      resources, and experiments created while learning and growing along the journey.
+      Some parts of this site may help you too, so feel free to explore — and if you
+      need any help, you can contact me as well.
+      <br><br>
+      Nothing here is meant to be perfect. It’s simply a place to build,
+      improve, and keep moving forward.
+    </p>
+  </main>
+
+  <div class="side-links">
+    <a href="#">About</a>
+    <a href="https://www.instagram.com/syncrational/" target="_blank">Contact</a>
+  </div>
+
+</body>
+</html>
