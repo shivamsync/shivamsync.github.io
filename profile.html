@@ -51,6 +51,17 @@
       word-break:break-word;
     }
 
+    input{
+      width:100%;
+      padding:14px;
+      margin-top:12px;
+      background:#1f1d1d;
+      border:1px solid #444;
+      border-radius:10px;
+      color:white;
+      font-size:15px;
+    }
+
     a, button{
       display:block;
       width:100%;
@@ -87,8 +98,14 @@
 
     <div class="info" id="userEmail">Checking login...</div>
 
-    <a href="favorites.html">View Favorites</a>
+    <input type="email" id="newEmail" placeholder="New email address">
+
+    <button onclick="updateUserEmail()">Update Email</button>
+
+    <button onclick="sendReset()">Forgot Password</button>
+
     <button onclick="logout()">Log Out</button>
+
     <a class="dark-link" href="index.html">Back to Home</a>
 
     <div id="message"></div>
@@ -100,7 +117,9 @@
     import {
       getAuth,
       onAuthStateChanged,
-      signOut
+      signOut,
+      sendPasswordResetEmail,
+      updateEmail
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
     const firebaseConfig = {
@@ -115,14 +134,53 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    let currentUser = null;
+
     onAuthStateChanged(auth, (user) => {
       if(user){
+        currentUser = user;
         document.getElementById("userEmail").innerHTML =
         "Signed in as:<br><br>" + user.email;
       }else{
         window.location.href = "signin.html";
       }
     });
+
+    window.sendReset = function(){
+      if(!currentUser) return;
+
+      sendPasswordResetEmail(auth, currentUser.email)
+      .then(() => {
+        document.getElementById("message").innerHTML =
+        "Password reset email sent.";
+      })
+      .catch((error) => {
+        document.getElementById("message").innerHTML =
+        error.message;
+      });
+    }
+
+    window.updateUserEmail = function(){
+      const newEmail = document.getElementById("newEmail").value;
+
+      if(!newEmail){
+        document.getElementById("message").innerHTML =
+        "Please enter a new email.";
+        return;
+      }
+
+      updateEmail(currentUser, newEmail)
+      .then(() => {
+        document.getElementById("message").innerHTML =
+        "Email updated successfully.";
+        document.getElementById("userEmail").innerHTML =
+        "Signed in as:<br><br>" + newEmail;
+      })
+      .catch((error) => {
+        document.getElementById("message").innerHTML =
+        error.message;
+      });
+    }
 
     window.logout = function(){
       signOut(auth).then(() => {
