@@ -82,15 +82,17 @@
       top: 35px;
       left: 50%;
       transform: translateX(-50%);
-      min-width: 180px;
-      text-align: center;
-      background: rgba(30, 30, 30, 0.95);
+      width: 420px;
+      text-align: left;
+      background: rgba(30, 30, 30, 0.97);
       border: 1px solid #333;
       border-radius: 14px;
-      padding: 14px;
+      padding: 18px;
       line-height: 1.8;
-      font-size: 16px;
+      font-size: 15px;
       z-index: 10;
+      max-height: 500px;
+      overflow-y: auto;
     }
 
     .nav-item:hover .dropdown {
@@ -156,6 +158,7 @@
     }
 
     @media (max-width: 800px) {
+
       header {
         flex-direction: column;
         padding: 25px;
@@ -180,6 +183,11 @@
         font-size: 17px;
       }
 
+      .dropdown {
+        width: 300px;
+        font-size: 14px;
+      }
+
       .side-links {
         position: static;
         text-align: center;
@@ -187,13 +195,16 @@
         margin-bottom: 30px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <header>
+
     <div>
+
       <div class="logo">Shivam Sync</div>
 
       <div class="socials">
@@ -211,6 +222,7 @@
         </a>
 
       </div>
+
     </div>
 
     <nav>
@@ -220,6 +232,7 @@
       </div>
 
       <div class="nav-item">
+
         <div class="nav-title">Certifications</div>
 
         <div class="dropdown">
@@ -228,33 +241,39 @@
           <a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a>
           <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank">Google Digital Garage</a>
         </div>
+
       </div>
 
       <div class="nav-item">
+
         <div class="nav-title">Letters</div>
 
         <div class="dropdown">
-         <p>
-There is something quiet about learning.<br><br>
 
-Not the loud kind that appears perfect from the outside, but the slower kind — the kind where understanding takes time, mistakes happen often, and progress feels almost invisible. Most days are spent figuring things out little by little, searching for answers, rebuilding ideas, and trying again after things fail.<br><br>
+          <p>
+            There is something quiet about learning.<br><br>
 
-This site was created somewhere in the middle of that process.<br><br>
+            Not the loud kind that appears perfect from the outside, but the slower kind — the kind where understanding takes time, mistakes happen often, and progress feels almost invisible. Most days are spent figuring things out little by little, searching for answers, rebuilding ideas, and trying again after things fail.<br><br>
 
-Not as a finished project, and not as something meant to look perfect, but simply as a small place on the internet to build, explore, and keep moving forward. Some parts of this space are unfinished, some ideas are still growing, and many things here will continue changing over time. That is part of the point.<br><br>
+            This site was created somewhere in the middle of that process.<br><br>
 
-Technology moves fast. The internet moves even faster. It is easy to feel behind when everyone seems experienced, skilled, or already successful. But every person who builds something meaningful once started from confusion too — learning basics, fixing errors, and slowly improving through consistency.<br><br>
+            Not as a finished project, and not as something meant to look perfect, but simply as a small place on the internet to build, explore, and keep moving forward. Some parts of this space are unfinished, some ideas are still growing, and many things here will continue changing over time. That is part of the point.<br><br>
 
-That is what this space represents.<br><br>
+            Technology moves fast. The internet moves even faster. It is easy to feel behind when everyone seems experienced, skilled, or already successful. But every person who builds something meaningful once started from confusion too — learning basics, fixing errors, and slowly improving through consistency.<br><br>
 
-A reminder that growth does not happen instantly. Skills are built quietly, one step at a time. Curiosity matters more than perfection, and starting matters more than waiting for the “right time.”<br><br>
+            That is what this space represents.<br><br>
 
-Maybe some resources here will help someone. Maybe a small idea or sentence stays with somebody for a while. And maybe this site itself becomes proof that even unfinished beginnings are worth creating.
-</p>
+            A reminder that growth does not happen instantly. Skills are built quietly, one step at a time. Curiosity matters more than perfection, and starting matters more than waiting for the “right time.”<br><br>
+
+            Maybe some resources here will help someone. Maybe a small idea or sentence stays with somebody for a while. And maybe this site itself becomes proof that even unfinished beginnings are worth creating.
+          </p>
+
         </div>
+
       </div>
 
       <div class="nav-item">
+
         <div class="nav-title">Toolkit</div>
 
         <div class="dropdown">
@@ -265,9 +284,11 @@ Maybe some resources here will help someone. Maybe a small idea or sentence stay
           <a href="https://www.figma.com" target="_blank">Figma</a>
           <a href="https://www.notion.so" target="_blank">Notion</a>
         </div>
+
       </div>
 
       <div class="nav-item">
+
         <div class="nav-title">⚙</div>
 
         <div class="dropdown">
@@ -277,9 +298,11 @@ Maybe some resources here will help someone. Maybe a small idea or sentence stay
           <p>Privacy</p>
           <p>Account</p>
         </div>
+
       </div>
 
     </nav>
+
   </header>
 
   <main class="main">
