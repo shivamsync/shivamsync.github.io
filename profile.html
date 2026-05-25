@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile - Shivam Sync</title>
 
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      background:#1f1d1d;
+      color:white;
+      font-family:Arial,sans-serif;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .box{
+      width:420px;
+      background:#2a2727;
+      padding:42px;
+      border-radius:18px;
+      text-align:center;
+      border:1px solid #333;
+    }
+
+    .brand{
+      font-size:18px;
+      letter-spacing:3px;
+      color:#bdbdbd;
+      margin-bottom:18px;
+      text-transform:uppercase;
+    }
+
+    h1{
+      font-weight:400;
+      margin-bottom:25px;
+    }
+
+    .info{
+      background:#1f1d1d;
+      border:1px solid #444;
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:18px;
+      color:#ddd;
+      word-break:break-word;
+    }
+
+    a, button{
+      display:block;
+      width:100%;
+      padding:14px;
+      margin-top:12px;
+      border-radius:10px;
+      border:none;
+      text-decoration:none;
+      background:white;
+      color:black;
+      cursor:pointer;
+      font-size:15px;
+    }
+
+    .dark-link{
+      background:#1f1d1d;
+      color:white;
+      border:1px solid #444;
+    }
+
+    #message{
+      margin-top:18px;
+      color:#7dff9b;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="brand">Shivam Sync</div>
+    <h1>Profile</h1>
+
+    <div class="info" id="userEmail">Checking login...</div>
+
+    <a href="favorites.html">View Favorites</a>
+    <button onclick="logout()">Log Out</button>
+    <a class="dark-link" href="index.html">Back to Home</a>
+
+    <div id="message"></div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhHsd8Pc-m_0AtUqNM--XVfeDb8yFD0aQ",
+      authDomain: "shivam-sync.firebaseapp.com",
+      projectId: "shivam-sync",
+      storageBucket: "shivam-sync.firebasestorage.app",
+      messagingSenderId: "575679682697",
+      appId: "1:575679682697:web:94f70091ae9c98ff118e58"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if(user){
+        document.getElementById("userEmail").innerHTML =
+        "Signed in as:<br><br>" + user.email;
+      }else{
+        window.location.href = "signin.html";
+      }
+    });
+
+    window.logout = function(){
+      signOut(auth).then(() => {
+        window.location.href = "signin.html";
+      });
+    }
+  </script>
+
+</body>
+</html>
