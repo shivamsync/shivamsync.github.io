@@ -6,7 +6,6 @@
   <title>Shivam Sync</title>
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -25,55 +24,37 @@
       position:fixed;
       top:0;
       left:0;
-      width:260px;
+      width:300px;
       height:560px;
       object-fit:cover;
       object-position:left top;
       opacity:.95;
       z-index:0;
       pointer-events:none;
-
-      mask-image:
-      linear-gradient(to right,
-      black 60%,
-      transparent 100%);
-
-      -webkit-mask-image:
-      linear-gradient(to right,
-      black 60%,
-      transparent 100%);
-
-      filter:
-      contrast(1.05)
-      saturate(1.08)
-      brightness(.92);
+      mask-image:linear-gradient(to right, black 58%, transparent 100%);
+      -webkit-mask-image:linear-gradient(to right, black 58%, transparent 100%);
+      filter:contrast(1.05) saturate(1.08) brightness(.92);
     }
 
     .lamp-glow{
       position:fixed;
-      top:80px;
-      left:40px;
-      width:220px;
-      height:240px;
-      background:
-      radial-gradient(circle,
-      rgba(255,135,33,.24),
-      transparent 68%);
-      filter:blur(22px);
+      top:90px;
+      left:38px;
+      width:230px;
+      height:260px;
+      background:radial-gradient(circle,rgba(255,135,33,.28),transparent 68%);
+      filter:blur(26px);
       z-index:0;
       pointer-events:none;
       animation:glow 2.2s infinite alternate;
     }
 
     @keyframes glow{
-      from{ opacity:.65; }
-      to{ opacity:1; }
+      from{opacity:.6;}
+      to{opacity:1;}
     }
 
-    header,
-    main,
-    .side-links,
-    .footer{
+    header,main,.side-links,.footer{
       position:relative;
       z-index:2;
     }
@@ -82,40 +63,39 @@
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      padding:70px 70px 20px 235px;
+      padding:58px 70px 20px 230px;
     }
 
     .logo{
       font-size:48px;
       font-weight:400;
-      letter-spacing:.5px;
       color:#f4eadc;
       text-shadow:0 0 24px rgba(255,190,120,.16);
     }
 
     .socials{
-      margin-top:26px;
+      margin-top:24px;
       display:flex;
-      gap:18px;
+      gap:16px;
     }
 
     .socials a{
       width:46px;
       height:46px;
       border-radius:50%;
-      border:1px solid rgba(231,205,173,.28);
+      border:1px solid rgba(231,205,173,.25);
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,.025);
-      transition:.35s;
-      backdrop-filter:blur(4px);
+      background:rgba(255,255,255,.03);
+      transition:.3s;
+      backdrop-filter:blur(6px);
     }
 
     .socials a:hover{
       transform:translateY(-4px);
-      border-color:#d58a38;
-      box-shadow:0 0 22px rgba(213,138,56,.22);
+      border-color:#d8944e;
+      box-shadow:0 0 22px rgba(216,148,78,.25);
     }
 
     .socials img{
@@ -125,9 +105,10 @@
 
     nav{
       display:flex;
-      gap:42px;
+      gap:38px;
       align-items:flex-start;
       font-size:20px;
+      margin-top:16px;
     }
 
     .nav-item{
@@ -136,13 +117,9 @@
     }
 
     .nav-title{
-      padding-bottom:12px;
       color:#f2e6d7;
+      padding-bottom:12px;
       transition:.3s;
-    }
-
-    .nav-item:hover .nav-title{
-      color:#d8944e;
     }
 
     .nav-title::after{
@@ -155,6 +132,10 @@
       transition:.3s;
     }
 
+    .nav-item:hover .nav-title{
+      color:#d8944e;
+    }
+
     .nav-item:hover .nav-title::after{
       width:100%;
     }
@@ -165,17 +146,16 @@
       top:42px;
       left:50%;
       transform:translateX(-50%);
-      min-width:205px;
-      text-align:left;
-      background:rgba(5,5,5,.92);
-      border:1px solid rgba(180,130,80,.25);
-      border-radius:12px;
-      padding:18px 20px;
-      line-height:2.15;
+      min-width:220px;
+      background:rgba(14,14,14,.9);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:16px;
+      line-height:2.1;
       font-size:16px;
       z-index:20;
       box-shadow:0 18px 45px rgba(0,0,0,.55);
-      backdrop-filter:blur(8px);
+      backdrop-filter:blur(12px);
     }
 
     .nav-item:hover .dropdown{
@@ -187,123 +167,169 @@
       display:block;
       color:#eadfce;
       text-decoration:none;
-      margin:3px 0;
+      padding:5px 8px;
+      border-radius:8px;
       white-space:nowrap;
+      transition:.25s;
     }
 
     .dropdown a:hover{
+      background:rgba(216,148,78,.12);
       color:#d8944e;
+      transform:translateX(3px);
     }
 
-    .main{
-      max-width:830px;
-      margin:90px auto 0;
+    .hero-card{
+      max-width:720px;
+      margin:100px auto 0;
+      padding:48px 46px;
       text-align:center;
-      padding:0 22px;
+      border-radius:28px;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        inset 0 0 40px rgba(255,255,255,.015);
+      backdrop-filter:blur(10px);
     }
 
     .profile{
-      width:240px;
-      height:240px;
+      width:210px;
+      height:210px;
       border-radius:50%;
       object-fit:cover;
-      margin-bottom:42px;
-      border:2px solid rgba(226,188,125,.85);
-      box-shadow:0 0 36px rgba(255,173,83,.14);
+      margin-bottom:32px;
+      border:2px solid rgba(226,188,125,.9);
+      box-shadow:0 0 38px rgba(255,173,83,.18);
     }
 
     .about{
-      font-size:22px;
+      font-size:20px;
       line-height:1.75;
       color:#eadfce;
     }
 
+    .about strong{
+      color:#d8944e;
+      font-weight:400;
+    }
+
+    .divider{
+      width:70%;
+      height:1px;
+      background:linear-gradient(to right,transparent,rgba(216,148,78,.55),transparent);
+      margin:32px auto;
+      position:relative;
+    }
+
+    .divider::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:-4px;
+      width:8px;
+      height:8px;
+      background:#d8944e;
+      transform:translateX(-50%) rotate(45deg);
+    }
+
     .side-links{
       position:fixed;
-      right:78px;
-      bottom:112px;
+      right:70px;
+      bottom:105px;
       font-size:22px;
-      line-height:2.5;
+      line-height:2.6;
       border-left:2px solid #d98236;
-      padding-left:26px;
+      padding-left:24px;
     }
 
     .side-links a{
       color:#d8944e;
       text-decoration:none;
       display:block;
+      transition:.3s;
+    }
+
+    .side-links a:hover{
+      color:#f1c38a;
+      transform:translateX(4px);
     }
 
     .footer{
       text-align:center;
-      margin:110px auto 0;
+      margin:70px auto 0;
       padding:28px;
       color:#7e766c;
       font-size:15px;
       border-top:1px solid rgba(255,255,255,.08);
-      max-width:900px;
+      max-width:760px;
     }
 
     @media(max-width:900px){
 
       .lamp-art{
         position:absolute;
-        top:10px;
+        top:12px;
         right:0;
         left:auto;
-
-        width:170px;
-        height:240px;
-
-        opacity:.88;
-
+        width:175px;
+        height:250px;
         object-fit:cover;
         object-position:center top;
-
-        mask-image:
-        linear-gradient(to left,
-        black 62%,
-        transparent 100%);
-
-        -webkit-mask-image:
-        linear-gradient(to left,
-        black 62%,
-        transparent 100%);
+        opacity:.86;
+        mask-image:linear-gradient(to left, black 64%, transparent 100%);
+        -webkit-mask-image:linear-gradient(to left, black 64%, transparent 100%);
       }
 
       .lamp-glow{
-        top:70px;
+        top:72px;
         left:auto;
-        right:10px;
+        right:12px;
         width:150px;
-        height:160px;
-        opacity:.6;
+        height:165px;
+        opacity:.55;
       }
 
       header{
         flex-direction:column;
-        padding:70px 24px 20px;
+        padding:66px 24px 20px;
         gap:30px;
       }
 
       .logo{
-        font-size:38px;
-        line-height:1.1;
+        font-size:46px;
+        line-height:1.05;
+        max-width:230px;
+      }
+
+      .socials{
+        margin-top:22px;
+      }
+
+      .socials a{
+        width:48px;
+        height:48px;
       }
 
       nav{
         flex-wrap:wrap;
-        gap:24px;
-        font-size:20px;
+        gap:22px;
+        font-size:25px;
+        margin-top:18px;
       }
 
       .dropdown{
         left:0;
         transform:none;
+        top:42px;
+        min-width:190px;
+        font-size:16px;
       }
 
-      .main{
-        margin-top:70px;
+      .hero-card{
+        margin:95px 22px 0;
+        padding:34px 24px;
+        border-radius:24px;
       }
 
       .profile{
@@ -313,6 +339,7 @@
 
       .about{
         font-size:18px;
+        line-height:1.7;
       }
 
       .side-links{
@@ -321,12 +348,15 @@
         border-left:none;
         padding-left:0;
         margin-top:55px;
+        font-size:20px;
       }
 
+      .footer{
+        margin-top:65px;
+        font-size:13px;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
@@ -335,62 +365,48 @@
   <div class="lamp-glow"></div>
 
   <header>
-
     <div>
-
       <div class="logo">Shivam Sync</div>
 
       <div class="socials">
-
         <a href="https://www.instagram.com/syncrational/" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="">
         </a>
 
         <a href="https://x.com/syncrational" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="">
         </a>
 
         <a href="https://linkedin.com/in/shivampant" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="">
         </a>
-
       </div>
-
     </div>
 
     <nav>
-
       <div class="nav-item">
         <div class="nav-title">Home</div>
       </div>
 
       <div class="nav-item">
-
         <div class="nav-title">Certifications</div>
-
         <div class="dropdown">
           <a href="https://skillsbuild.org" target="_blank">IBM SkillsBuild</a>
           <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
           <a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a>
           <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank">Google Digital Garage</a>
         </div>
-
       </div>
 
       <div class="nav-item">
-
         <div class="nav-title">Letters</div>
-
         <div class="dropdown">
           <a href="letter.html">Built while learning</a>
         </div>
-
       </div>
 
       <div class="nav-item">
-
         <div class="nav-title">Toolkit</div>
-
         <div class="dropdown">
           <a href="https://code.visualstudio.com" target="_blank">VS Code</a>
           <a href="https://github.com" target="_blank">GitHub</a>
@@ -399,13 +415,10 @@
           <a href="https://www.figma.com" target="_blank">Figma</a>
           <a href="https://www.notion.so" target="_blank">Notion</a>
         </div>
-
       </div>
 
       <div class="nav-item">
-
         <div class="nav-title">⚙</div>
-
         <div class="dropdown">
           <a href="profile.html">Profile</a>
           <a href="signin.html">Sign In</a>
@@ -413,32 +426,27 @@
           <p>Privacy</p>
           <a href="favorites.html">Favorites</a>
         </div>
-
       </div>
-
     </nav>
-
   </header>
 
-  <main class="main">
-
-    <img src="profile.jpg" alt="Profile Image" class="profile" />
+  <main class="hero-card">
+    <img src="profile.jpg" alt="" class="profile">
 
     <p class="about">
-
-      Welcome. I’m Shivam — exploring technology, creativity, and the process
-      of building things step by step. This space is a small collection of ideas,
-      resources, and experiments created while learning and growing along the journey.
-      Some parts of this site may help you too, so feel free to explore — and if you
-      need any help, you can contact me as well.
-
-      <br><br>
-
-      Nothing here is meant to be perfect. It’s simply a place to build,
-      improve, and keep moving forward.
-
+      Welcome. I’m <strong>Shivam</strong> — exploring technology, creativity,
+      and the process of building things step by step. This space is a small
+      collection of ideas, resources, and experiments created while learning
+      and growing along the journey. Some parts of this site may help you too,
+      so feel free to explore — and if you need any help, you can contact me as well.
     </p>
 
+    <div class="divider"></div>
+
+    <p class="about">
+      Nothing here is meant to be perfect. It’s simply a place to build,
+      improve, and keep moving forward.
+    </p>
   </main>
 
   <div class="side-links">
