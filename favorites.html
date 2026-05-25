@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favorites - Shivam Sync</title>
 
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      background:#1f1d1d;
+      color:white;
+      font-family:Arial,sans-serif;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .box{
+      width:440px;
+      background:#2a2727;
+      padding:42px;
+      border-radius:18px;
+      text-align:center;
+      border:1px solid #333;
+    }
+
+    .brand{
+      font-size:18px;
+      letter-spacing:3px;
+      color:#bdbdbd;
+      margin-bottom:18px;
+      text-transform:uppercase;
+    }
+
+    h1{
+      font-weight:400;
+      margin-bottom:25px;
+    }
+
+    .item{
+      background:#1f1d1d;
+      border:1px solid #444;
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:18px;
+    }
+
+    .item a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+    }
+
+    .link{
+      display:block;
+      width:100%;
+      padding:14px;
+      margin-top:12px;
+      border-radius:10px;
+      text-decoration:none;
+      background:white;
+      color:black;
+      font-size:15px;
+    }
+
+    #message{
+      color:#aaa;
+      margin-bottom:18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="brand">Shivam Sync</div>
+    <h1>Favorites</h1>
+
+    <div id="message">Checking saved letters...</div>
+
+    <div id="favoritesList"></div>
+
+    <a class="link" href="profile.html">Back to Profile</a>
+    <a class="link" href="index.html">Back to Home</a>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    import {
+      getFirestore,
+      doc,
+      getDoc
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhHsd8Pc-m_0AtUqNM--XVfeDb8yFD0aQ",
+      authDomain: "shivam-sync.firebaseapp.com",
+      projectId: "shivam-sync",
+      storageBucket: "shivam-sync.firebasestorage.app",
+      messagingSenderId: "575679682697",
+      appId: "1:575679682697:web:94f70091ae9c98ff118e58"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    onAuthStateChanged(auth, async (user) => {
+      if(!user){
+        window.location.href = "signin.html";
+        return;
+      }
+
+      const favoriteRef = doc(db, "favorites", user.uid);
+      const favoriteSnap = await getDoc(favoriteRef);
+
+      if(favoriteSnap.exists() && favoriteSnap.data().savedLetter){
+        document.getElementById("message").innerHTML = "Your saved letters:";
+        document.getElementById("favoritesList").innerHTML = `
+          <div class="item">
+            <a href="letter.html">Built while learning</a>
+          </div>
+        `;
+      }else{
+        document.getElementById("message").innerHTML =
+        "You have not saved any letters yet.";
+      }
+    });
+  </script>
+
+</body>
+</html>
