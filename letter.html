@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Built while learning</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Built While Learning</title>
 
   <style>
 
@@ -22,79 +22,95 @@
     }
 
     .container{
-      max-width:900px;
+      max-width:950px;
       margin:auto;
+      background:#2a2727;
+      border-radius:24px;
+      padding:50px;
     }
 
-    .hero{
+    .top{
       display:flex;
-      align-items:center;
       gap:35px;
-      margin-bottom:60px;
+      align-items:flex-start;
+      margin-bottom:40px;
       flex-wrap:wrap;
     }
 
-    .letter-image{
-      width:220px;
-      height:220px;
-      object-fit:cover;
+    .top img{
+      width:260px;
       border-radius:20px;
-      border:1px solid #333;
+      object-fit:cover;
+      border:2px solid #3a3a3a;
     }
 
     h1{
-      font-size:46px;
+      font-size:42px;
+      margin-bottom:18px;
       font-weight:400;
     }
 
-    p{
+    .intro{
       font-size:18px;
-      color:#e5e5e5;
-      margin-bottom:28px;
+      color:#d8d8d8;
+      max-width:500px;
     }
 
-    a{
-      color:white;
-      text-decoration:none;
+    .letter{
+      font-size:20px;
+      color:#efefef;
+      margin-top:20px;
     }
 
-    .back{
-      margin-top:70px;
-      text-align:center;
-      font-size:18px;
-      opacity:0.7;
+    .save-btn{
+      margin-top:40px;
+      padding:15px 28px;
+      border:none;
+      border-radius:14px;
+      background:white;
+      color:black;
+      font-size:16px;
+      cursor:pointer;
       transition:0.3s;
     }
 
-    .back:hover{
-      opacity:1;
+    .save-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    #message{
+      margin-top:18px;
+      color:#7dff9b;
+      font-size:16px;
     }
 
     .footer{
       text-align:center;
-      margin-top:100px;
+      margin-top:80px;
       color:#777;
       font-size:14px;
     }
 
     @media(max-width:800px){
 
-      .hero{
+      .container{
+        padding:30px;
+      }
+
+      .top{
         flex-direction:column;
-        text-align:center;
+      }
+
+      .top img{
+        width:100%;
       }
 
       h1{
-        font-size:36px;
+        font-size:34px;
       }
 
-      p{
-        font-size:17px;
-      }
-
-      .letter-image{
-        width:180px;
-        height:180px;
+      .letter{
+        font-size:18px;
       }
 
     }
@@ -107,57 +123,150 @@
 
   <div class="container">
 
-    <div class="hero">
+    <div class="top">
 
-      <img src="letter.jpg" alt="Letter Image" class="letter-image">
+      <img src="letter.jpg" alt="Letter Image">
 
       <div>
-        <h1>Built while learning</h1>
+
+        <h1>Built While Learning</h1>
+
+        <p class="intro">
+          A small reminder that unfinished beginnings still matter.
+        </p>
+
       </div>
 
     </div>
 
-    <p>
-      There is something quiet about learning.
-    </p>
+    <div class="letter">
 
-    <p>
-      Not the loud kind that appears perfect from the outside, but the slower kind — the kind where understanding takes time, mistakes happen often, and progress feels almost invisible. Most days are spent figuring things out little by little, searching for answers, rebuilding ideas, and trying again after things fail.
-    </p>
+      <p>
 
-    <p>
-      This site was created somewhere in the middle of that process.
-    </p>
+        There is something quiet about learning.
 
-    <p>
-      Not as a finished project, and not as something meant to look perfect, but simply as a small place on the internet to build, explore, and keep moving forward. Some parts of this space are unfinished, some ideas are still growing, and many things here will continue changing over time. That is part of the point.
-    </p>
+        <br><br>
 
-    <p>
-      Technology moves fast. The internet moves even faster. It is easy to feel behind when everyone seems experienced, skilled, or already successful. But every person who builds something meaningful once started from confusion too — learning basics, fixing errors, and slowly improving through consistency.
-    </p>
+        Not the loud kind that appears perfect from the outside, but the slower kind — the kind where understanding takes time, mistakes happen often, and progress feels almost invisible. Most days are spent figuring things out little by little, searching for answers, rebuilding ideas, and trying again after things fail.
 
-    <p>
-      That is what this space represents.
-    </p>
+        <br><br>
 
-    <p>
-      A reminder that growth does not happen instantly. Skills are built quietly, one step at a time. Curiosity matters more than perfection, and starting matters more than waiting for the “right time.”
-    </p>
+        This site was created somewhere in the middle of that process.
 
-    <p>
-      Maybe some resources here will help someone. Maybe a small idea or sentence stays with somebody for a while. And maybe this site itself becomes proof that even unfinished beginnings are worth creating.
-    </p>
+        <br><br>
 
-    <div class="back">
-      <a href="index.html">← Back to Home</a>
-    </div>
+        Not as a finished project, and not as something meant to look perfect, but simply as a small place on the internet to build, explore, and keep moving forward. Some parts of this space are unfinished, some ideas are still growing, and many things here will continue changing over time. That is part of the point.
 
-    <div class="footer">
-      © 2026 Shivam Sync. All rights reserved.
+        <br><br>
+
+        Technology moves fast. The internet moves even faster. It is easy to feel behind when everyone seems experienced, skilled, or already successful. But every person who builds something meaningful once started from confusion too — learning basics, fixing errors, and slowly improving through consistency.
+
+        <br><br>
+
+        That is what this space represents.
+
+        <br><br>
+
+        A reminder that growth does not happen instantly. Skills are built quietly, one step at a time. Curiosity matters more than perfection, and starting matters more than waiting for the “right time.”
+
+        <br><br>
+
+        Maybe some resources here will help someone. Maybe a small idea or sentence stays with somebody for a while. And maybe this site itself becomes proof that even unfinished beginnings are worth creating.
+
+      </p>
+
+      <button class="save-btn" onclick="saveLetter()">
+        ♡ Save Letter
+      </button>
+
+      <div id="message"></div>
+
     </div>
 
   </div>
+
+  <div class="footer">
+    © 2026 Shivam Sync. All rights reserved.
+  </div>
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    import {
+      getFirestore,
+      doc,
+      setDoc
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyBhHsd8Pc-m_0AtUqNM--XVfeDb8yFD0aQ",
+
+      authDomain: "shivam-sync.firebaseapp.com",
+
+      projectId: "shivam-sync",
+
+      storageBucket: "shivam-sync.firebasestorage.app",
+
+      messagingSenderId: "575679682697",
+
+      appId: "1:575679682697:web:94f70091ae9c98ff118e58"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+    const db = getFirestore(app);
+
+    let currentUser = null;
+
+    onAuthStateChanged(auth, (user) => {
+
+      currentUser = user;
+
+    });
+
+    window.saveLetter = async function(){
+
+      if(!currentUser){
+
+        document.getElementById("message").innerHTML =
+        "Please sign in first.";
+
+        return;
+
+      }
+
+      await setDoc(
+
+        doc(db, "favorites", currentUser.uid),
+
+        {
+          savedLetter:true,
+          email:currentUser.email
+        }
+
+      );
+
+      document.getElementById("message").innerHTML =
+      "Letter saved successfully.";
+
+    }
+
+  </script>
 
 </body>
 </html>
