@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
 
+  <style>
+
+    body{
+      background:#1f1d1d;
+      color:white;
+      font-family:Arial,sans-serif;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .box{
+      width:350px;
+      background:#2a2727;
+      padding:40px;
+      border-radius:18px;
+      text-align:center;
+    }
+
+    h1{
+      margin-bottom:25px;
+      font-weight:400;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      margin-bottom:16px;
+      background:#1f1d1d;
+      border:1px solid #444;
+      border-radius:10px;
+      color:white;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      background:white;
+      color:black;
+      cursor:pointer;
+    }
+
+    #message{
+      margin-top:18px;
+      color:#7dff9b;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>Create Account</h1>
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="signup()">Sign Up</button>
+
+    <div id="message"></div>
+
+  </div>
+
+  <script type="module">
+
+    import { initializeApp }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      createUserWithEmailAndPassword
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyBhHsd8Pc-m_0AtUqNM--XVfeDb8yFD0aQ",
+
+      authDomain: "shivam-sync.firebaseapp.com",
+
+      projectId: "shivam-sync",
+
+      storageBucket: "shivam-sync.firebasestorage.app",
+
+      messagingSenderId: "575679682697",
+
+      appId: "1:575679682697:web:94f70091ae9c98ff118e58"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+    window.signup = function(){
+
+      const email =
+      document.getElementById("email").value;
+
+      const password =
+      document.getElementById("password").value;
+
+      createUserWithEmailAndPassword(auth,email,password)
+
+      .then(() => {
+
+        document.getElementById("message").innerHTML =
+        "Account created successfully.";
+
+      })
+
+      .catch((error) => {
+
+        document.getElementById("message").innerHTML =
+        error.message;
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
