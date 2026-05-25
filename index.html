@@ -6,18 +6,13 @@
   <title>Shivam Sync</title>
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
 
     body{
       min-height:100vh;
       background:#030303;
       color:#efe7d8;
-      font-family:Georgia,"Times New Roman",serif;
+      font-family: Georgia, "Times New Roman", serif;
       overflow-x:hidden;
     }
 
@@ -25,62 +20,37 @@
       position:fixed;
       top:0;
       left:0;
-      width:245px;
-      height:520px;
+      width:310px;
+      height:100vh;
       object-fit:cover;
       object-position:left top;
       opacity:.95;
       z-index:0;
       pointer-events:none;
-
-      filter:
-      contrast(1.05)
-      saturate(1.08)
-      brightness(.92);
-
-      mask-image:
-        linear-gradient(to right,
-          black 0%,
-          black 68%,
-          transparent 100%),
-        linear-gradient(to bottom,
-          black 0%,
-          black 82%,
-          transparent 100%);
-
-      -webkit-mask-image:
-        linear-gradient(to right,
-          black 0%,
-          black 68%,
-          transparent 100%),
-        linear-gradient(to bottom,
-          black 0%,
-          black 82%,
-          transparent 100%);
+      mask-image:linear-gradient(to right, black 58%, transparent 100%);
+      -webkit-mask-image:linear-gradient(to right, black 58%, transparent 100%);
+      filter:contrast(1.05) saturate(1.1);
     }
 
     .lamp-glow{
       position:fixed;
-      top:100px;
-      left:35px;
-      width:210px;
-      height:230px;
-      background:radial-gradient(circle, rgba(255,135,33,.24), transparent 70%);
-      filter:blur(25px);
+      top:80px;
+      left:40px;
+      width:240px;
+      height:260px;
+      background:radial-gradient(circle, rgba(255,135,33,.28), transparent 68%);
+      filter:blur(22px);
       z-index:0;
       pointer-events:none;
       animation:glow 2.2s infinite alternate;
     }
 
     @keyframes glow{
-      from{ opacity:.6; }
+      from{ opacity:.65; }
       to{ opacity:1; }
     }
 
-    header,
-    main,
-    .side-links,
-    .footer{
+    header, main, .side-links, .footer{
       position:relative;
       z-index:2;
     }
@@ -89,12 +59,13 @@
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      padding:75px 70px 20px 260px;
+      padding:70px 70px 20px 245px;
     }
 
     .logo{
-      font-size:52px;
+      font-size:48px;
       font-weight:400;
+      letter-spacing:.5px;
       color:#f4eadc;
       text-shadow:0 0 24px rgba(255,190,120,.16);
     }
@@ -115,11 +86,13 @@
       justify-content:center;
       background:rgba(255,255,255,.025);
       transition:.35s;
+      backdrop-filter:blur(4px);
     }
 
     .socials a:hover{
       transform:translateY(-4px);
       border-color:#d58a38;
+      box-shadow:0 0 22px rgba(213,138,56,.22);
     }
 
     .socials img{
@@ -132,7 +105,6 @@
       gap:42px;
       align-items:flex-start;
       font-size:20px;
-      margin-top:10px;
     }
 
     .nav-item{
@@ -148,6 +120,20 @@
 
     .nav-item:hover .nav-title{
       color:#d8944e;
+    }
+
+    .nav-title::after{
+      content:"";
+      display:block;
+      width:0;
+      height:2px;
+      margin-top:8px;
+      background:#d8944e;
+      transition:.3s;
+    }
+
+    .nav-item:hover .nav-title::after{
+      width:100%;
     }
 
     .dropdown{
@@ -166,6 +152,7 @@
       font-size:16px;
       z-index:20;
       box-shadow:0 18px 45px rgba(0,0,0,.55);
+      backdrop-filter:blur(8px);
     }
 
     .nav-item:hover .dropdown{
@@ -187,7 +174,7 @@
 
     .main{
       max-width:830px;
-      margin:115px auto 0;
+      margin:90px auto 0;
       text-align:center;
       padding:0 22px;
     }
@@ -235,108 +222,42 @@
     }
 
     @media(max-width:900px){
-
       .lamp-art{
         position:absolute;
-        top:10px;
-        right:0;
-        left:auto;
-
-        width:165px;
-        height:240px;
-
-        object-fit:cover;
-        object-position:center top;
-
-        opacity:.88;
-
-        filter:
-        brightness(.88)
-        contrast(1.04)
-        saturate(1.06);
-
-        mask-image:
-          linear-gradient(to left,
-            black 0%,
-            black 72%,
-            transparent 100%),
-          linear-gradient(to bottom,
-            black 0%,
-            black 78%,
-            transparent 100%);
-
-        -webkit-mask-image:
-          linear-gradient(to left,
-            black 0%,
-            black 72%,
-            transparent 100%),
-          linear-gradient(to bottom,
-            black 0%,
-            black 78%,
-            transparent 100%);
-      }
-
-      .lamp-glow{
-        top:70px;
-        left:auto;
-        right:15px;
-        width:145px;
-        height:150px;
-        opacity:.55;
+        width:100%;
+        height:260px;
+        opacity:.45;
+        mask-image:linear-gradient(to bottom, black 40%, transparent 100%);
+        -webkit-mask-image:linear-gradient(to bottom, black 40%, transparent 100%);
       }
 
       header{
         flex-direction:column;
-        padding:70px 24px 20px;
-        gap:32px;
+        padding:290px 24px 20px;
+        gap:30px;
       }
 
-      .logo{
-        font-size:46px;
-        line-height:1.1;
-        max-width:240px;
-      }
-
-      .socials{
-        margin-top:24px;
-        gap:16px;
-      }
-
-      .socials a{
-        width:48px;
-        height:48px;
-      }
+      .logo{ font-size:36px; }
 
       nav{
         flex-wrap:wrap;
-        gap:24px;
-        font-size:25px;
-        margin-top:20px;
+        gap:22px;
+        font-size:18px;
       }
 
       .dropdown{
         left:0;
         transform:none;
-        top:42px;
-        min-width:190px;
-        font-size:16px;
       }
 
-      .main{
-        margin-top:95px;
-        padding:0 24px;
-      }
+      .main{ margin-top:45px; }
 
       .profile{
-        width:215px;
-        height:215px;
-        margin-bottom:35px;
+        width:190px;
+        height:190px;
       }
 
-      .about{
-        font-size:18px;
-        line-height:1.75;
-      }
+      .about{ font-size:18px; }
 
       .side-links{
         position:static;
@@ -344,139 +265,105 @@
         border-left:none;
         padding-left:0;
         margin-top:55px;
-        font-size:20px;
       }
-
-      .footer{
-        margin-top:70px;
-        font-size:13px;
-      }
-
     }
-
   </style>
 </head>
 
 <body>
 
-  <img src="lamp.png" class="lamp-art" alt="">
-  <div class="lamp-glow"></div>
+<img src="lamp.png" class="lamp-art" alt="">
+<div class="lamp-glow"></div>
 
-  <header>
+<header>
+  <div>
+    <div class="logo">Shivam Sync</div>
 
-    <div>
+    <div class="socials">
+      <a href="https://www.instagram.com/syncrational/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
 
-      <div class="logo">Shivam Sync</div>
+      <a href="https://x.com/syncrational" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X">
+      </a>
 
-      <div class="socials">
-
-        <a href="https://www.instagram.com/syncrational/" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="">
-        </a>
-
-        <a href="https://x.com/syncrational" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="">
-        </a>
-
-        <a href="https://linkedin.com/in/shivampant" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="">
-        </a>
-
-      </div>
-
+      <a href="https://linkedin.com/in/shivampant" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
     </div>
-
-    <nav>
-
-      <div class="nav-item">
-        <div class="nav-title">Home</div>
-      </div>
-
-      <div class="nav-item">
-
-        <div class="nav-title">Certifications</div>
-
-        <div class="dropdown">
-          <a href="https://skillsbuild.org" target="_blank">IBM SkillsBuild</a>
-          <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
-          <a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a>
-          <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank">Google Digital Garage</a>
-        </div>
-
-      </div>
-
-      <div class="nav-item">
-
-        <div class="nav-title">Letters</div>
-
-        <div class="dropdown">
-          <a href="letter.html">Built while learning</a>
-        </div>
-
-      </div>
-
-      <div class="nav-item">
-
-        <div class="nav-title">Toolkit</div>
-
-        <div class="dropdown">
-          <a href="https://code.visualstudio.com" target="_blank">VS Code</a>
-          <a href="https://github.com" target="_blank">GitHub</a>
-          <a href="https://vercel.com" target="_blank">Vercel</a>
-          <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
-          <a href="https://www.figma.com" target="_blank">Figma</a>
-          <a href="https://www.notion.so" target="_blank">Notion</a>
-        </div>
-
-      </div>
-
-      <div class="nav-item">
-
-        <div class="nav-title">⚙</div>
-
-        <div class="dropdown">
-          <a href="profile.html">Profile</a>
-          <a href="signin.html">Sign In</a>
-          <a href="signup.html">Sign Up</a>
-          <p>Privacy</p>
-          <a href="favorites.html">Favorites</a>
-        </div>
-
-      </div>
-
-    </nav>
-
-  </header>
-
-  <main class="main">
-
-    <img src="profile.jpg" alt="" class="profile">
-
-    <p class="about">
-
-      Welcome. I’m Shivam — exploring technology, creativity, and the process
-      of building things step by step. This space is a small collection of ideas,
-      resources, and experiments created while learning and growing along the journey.
-      Some parts of this site may help you too, so feel free to explore — and if you
-      need any help, you can contact me as well.
-
-      <br><br>
-
-      Nothing here is meant to be perfect. It’s simply a place to build,
-      improve, and keep moving forward.
-
-    </p>
-
-  </main>
-
-  <div class="side-links">
-    <a href="#">About</a>
-    <a href="https://www.instagram.com/syncrational/" target="_blank">Contact</a>
   </div>
 
-  <footer class="footer">
-    © 2026 Shivam Sync. All rights reserved.
-  </footer>
+  <nav>
+    <div class="nav-item">
+      <div class="nav-title">Home</div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-title">Certifications</div>
+      <div class="dropdown">
+        <a href="https://skillsbuild.org" target="_blank">IBM SkillsBuild</a>
+        <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
+        <a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a>
+        <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank">Google Digital Garage</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-title">Letters</div>
+      <div class="dropdown">
+        <a href="letter.html">Built while learning</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-title">Toolkit</div>
+      <div class="dropdown">
+        <a href="https://code.visualstudio.com" target="_blank">VS Code</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://vercel.com" target="_blank">Vercel</a>
+        <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+        <a href="https://www.figma.com" target="_blank">Figma</a>
+        <a href="https://www.notion.so" target="_blank">Notion</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-title">⚙</div>
+      <div class="dropdown">
+        <a href="profile.html">Profile</a>
+        <a href="signin.html">Sign In</a>
+        <a href="signup.html">Sign Up</a>
+        <p>Privacy</p>
+        <a href="favorites.html">Favorites</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="main">
+  <img src="profile.jpg" alt="Profile Image" class="profile">
+
+  <p class="about">
+    Welcome. I’m Shivam — exploring technology, creativity, and the process
+    of building things step by step. This space is a small collection of ideas,
+    resources, and experiments created while learning and growing along the journey.
+    Some parts of this site may help you too, so feel free to explore — and if you
+    need any help, you can contact me as well.
+    <br><br>
+    Nothing here is meant to be perfect. It’s simply a place to build,
+    improve, and keep moving forward.
+  </p>
+</main>
+
+<div class="side-links">
+  <a href="#">About</a>
+  <a href="https://www.instagram.com/syncrational/" target="_blank">Contact</a>
+</div>
+
+<footer class="footer">
+  © 2026 Shivam Sync. All rights reserved.
+</footer>
 
 </body>
 </html>
