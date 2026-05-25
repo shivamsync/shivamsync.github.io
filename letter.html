@@ -22,14 +22,28 @@
     }
 
     .container{
-      max-width:800px;
+      max-width:900px;
       margin:auto;
     }
 
+    .hero{
+      display:flex;
+      align-items:center;
+      gap:35px;
+      margin-bottom:60px;
+      flex-wrap:wrap;
+    }
+
+    .letter-image{
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      border-radius:20px;
+      border:1px solid #333;
+    }
+
     h1{
-      font-size:42px;
-      margin-bottom:40px;
-      text-align:center;
+      font-size:46px;
       font-weight:400;
     }
 
@@ -65,12 +79,22 @@
 
     @media(max-width:800px){
 
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
       h1{
-        font-size:34px;
+        font-size:36px;
       }
 
       p{
         font-size:17px;
+      }
+
+      .letter-image{
+        width:180px;
+        height:180px;
       }
 
     }
@@ -83,7 +107,15 @@
 
   <div class="container">
 
-    <h1>Built while learning</h1>
+    <div class="hero">
+
+      <img src="letter.jpg" alt="Letter Image" class="letter-image">
+
+      <div>
+        <h1>Built while learning</h1>
+      </div>
+
+    </div>
 
     <p>
       There is something quiet about learning.
