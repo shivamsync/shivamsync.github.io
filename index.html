@@ -80,7 +80,7 @@
     .dropdown{
       display:none;
       position:absolute;
-      top:35px;
+      top:28px;
       left:50%;
       transform:translateX(-50%);
       min-width:180px;
@@ -92,6 +92,7 @@
       line-height:1.8;
       font-size:16px;
       z-index:10;
+      pointer-events:auto;
     }
 
     .nav-item:hover .dropdown{
@@ -104,6 +105,11 @@
       color:white;
       text-decoration:none;
       margin:4px 0;
+      transition:0.3s;
+    }
+
+    .dropdown a:hover{
+      opacity:0.7;
     }
 
     .main{
@@ -272,7 +278,7 @@
         <div class="dropdown">
           <p>Profile</p>
           <a href="signup.html">Sign Up</a>
-<a href="signin.html">Sign In</a>
+          <a href="signin.html">Sign In</a>
           <p>Privacy</p>
           <p>Account</p>
         </div>
