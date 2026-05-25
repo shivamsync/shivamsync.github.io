@@ -12,8 +12,42 @@
       min-height:100vh;
       background:#030303;
       color:#efe7d8;
-      font-family:Georgia,"Times New Roman",serif;
+      font-family: Georgia, "Times New Roman", serif;
       overflow-x:hidden;
+    }
+
+    .lamp-art{
+      position:fixed;
+      top:0;
+      left:0;
+      width:310px;
+      height:100vh;
+      object-fit:cover;
+      object-position:left top;
+      opacity:.95;
+      z-index:0;
+      pointer-events:none;
+      mask-image:linear-gradient(to right, black 58%, transparent 100%);
+      -webkit-mask-image:linear-gradient(to right, black 58%, transparent 100%);
+      filter:contrast(1.05) saturate(1.1);
+    }
+
+    .lamp-glow{
+      position:fixed;
+      top:80px;
+      left:40px;
+      width:240px;
+      height:260px;
+      background:radial-gradient(circle, rgba(255,135,33,.28), transparent 68%);
+      filter:blur(22px);
+      z-index:0;
+      pointer-events:none;
+      animation:glow 2.2s infinite alternate;
+    }
+
+    @keyframes glow{
+      from{ opacity:.65; }
+      to{ opacity:1; }
     }
 
     header, main, .side-links, .footer{
@@ -22,21 +56,18 @@
     }
 
     header{
-      display:grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items:start;
-      padding:60px 70px 20px;
-    }
-
-    .brand{
-      justify-self:start;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:70px 70px 20px 245px;
     }
 
     .logo{
       font-size:48px;
       font-weight:400;
+      letter-spacing:.5px;
       color:#f4eadc;
-      text-shadow:0 0 24px rgba(255,190,120,.18);
+      text-shadow:0 0 24px rgba(255,190,120,.16);
     }
 
     .socials{
@@ -55,6 +86,7 @@
       justify-content:center;
       background:rgba(255,255,255,.025);
       transition:.35s;
+      backdrop-filter:blur(4px);
     }
 
     .socials a:hover{
@@ -68,44 +100,11 @@
       height:20px;
     }
 
-    .lamp-box{
-      justify-self:center;
-      width:230px;
-      height:260px;
-      position:relative;
-      margin-top:-10px;
-    }
-
-    .lamp-box::after{
-      content:"";
-      position:absolute;
-      inset:20px;
-      background:radial-gradient(circle,rgba(255,130,35,.30),transparent 70%);
-      filter:blur(24px);
-      z-index:-1;
-      animation:glow 2.4s infinite alternate;
-    }
-
-    .lamp-img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      filter:contrast(1.08) saturate(1.08);
-      mask-image:radial-gradient(circle, black 58%, transparent 78%);
-      -webkit-mask-image:radial-gradient(circle, black 58%, transparent 78%);
-    }
-
-    @keyframes glow{
-      from{ opacity:.6; }
-      to{ opacity:1; }
-    }
-
     nav{
-      justify-self:end;
       display:flex;
-      gap:36px;
+      gap:42px;
+      align-items:flex-start;
       font-size:20px;
-      margin-top:26px;
     }
 
     .nav-item{
@@ -121,6 +120,20 @@
 
     .nav-item:hover .nav-title{
       color:#d8944e;
+    }
+
+    .nav-title::after{
+      content:"";
+      display:block;
+      width:0;
+      height:2px;
+      margin-top:8px;
+      background:#d8944e;
+      transition:.3s;
+    }
+
+    .nav-item:hover .nav-title::after{
+      width:100%;
     }
 
     .dropdown{
@@ -139,6 +152,7 @@
       font-size:16px;
       z-index:20;
       box-shadow:0 18px 45px rgba(0,0,0,.55);
+      backdrop-filter:blur(8px);
     }
 
     .nav-item:hover .dropdown{
@@ -160,7 +174,7 @@
 
     .main{
       max-width:830px;
-      margin:80px auto 0;
+      margin:90px auto 0;
       text-align:center;
       padding:0 22px;
     }
@@ -208,83 +222,42 @@
     }
 
     @media(max-width:900px){
+      .lamp-art{
+        position:absolute;
+        width:100%;
+        height:260px;
+        opacity:.45;
+        mask-image:linear-gradient(to bottom, black 40%, transparent 100%);
+        -webkit-mask-image:linear-gradient(to bottom, black 40%, transparent 100%);
+      }
 
       header{
-        display:grid;
-        grid-template-columns:1fr auto;
-        grid-template-areas:
-          "brand lamp"
-          "nav nav";
-        padding:55px 20px 10px;
-        column-gap:14px;
-        row-gap:36px;
-        align-items:start;
+        flex-direction:column;
+        padding:290px 24px 20px;
+        gap:30px;
       }
 
-      .brand{
-        grid-area:brand;
-      }
-
-      .logo{
-        font-size:43px;
-        line-height:1.05;
-      }
-
-      .socials{
-        margin-top:24px;
-        gap:16px;
-      }
-
-      .socials a{
-        width:48px;
-        height:48px;
-      }
-
-      .lamp-box{
-        grid-area:lamp;
-        width:155px;
-        height:205px;
-        margin-top:-20px;
-        opacity:.92;
-      }
-
-      .lamp-img{
-        mask-image:radial-gradient(circle, black 66%, transparent 88%);
-        -webkit-mask-image:radial-gradient(circle, black 66%, transparent 88%);
-      }
+      .logo{ font-size:36px; }
 
       nav{
-        grid-area:nav;
-        justify-self:start;
         flex-wrap:wrap;
-        gap:24px;
-        font-size:26px;
-        margin-top:0;
+        gap:22px;
+        font-size:18px;
       }
 
       .dropdown{
         left:0;
         transform:none;
-        top:40px;
-        min-width:190px;
-        font-size:16px;
       }
 
-      .main{
-        margin-top:95px;
-        padding:0 24px;
-      }
+      .main{ margin-top:45px; }
 
       .profile{
-        width:215px;
-        height:215px;
-        margin-bottom:35px;
+        width:190px;
+        height:190px;
       }
 
-      .about{
-        font-size:18px;
-        line-height:1.75;
-      }
+      .about{ font-size:18px; }
 
       .side-links{
         position:static;
@@ -292,12 +265,6 @@
         border-left:none;
         padding-left:0;
         margin-top:55px;
-        font-size:20px;
-      }
-
-      .footer{
-        margin-top:70px;
-        font-size:13px;
       }
     }
   </style>
@@ -305,28 +272,26 @@
 
 <body>
 
-<header>
+<img src="lamp.png" class="lamp-art" alt="">
+<div class="lamp-glow"></div>
 
-  <div class="brand">
+<header>
+  <div>
     <div class="logo">Shivam Sync</div>
 
     <div class="socials">
       <a href="https://www.instagram.com/syncrational/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
       </a>
 
       <a href="https://x.com/syncrational" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X">
       </a>
 
       <a href="https://linkedin.com/in/shivampant" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
       </a>
     </div>
-  </div>
-
-  <div class="lamp-box">
-    <img src="lamp.png" class="lamp-img" alt="">
   </div>
 
   <nav>
@@ -374,11 +339,10 @@
       </div>
     </div>
   </nav>
-
 </header>
 
 <main class="main">
-  <img src="profile.jpg" alt="" class="profile">
+  <img src="profile.jpg" alt="Profile Image" class="profile">
 
   <p class="about">
     Welcome. I’m Shivam — exploring technology, creativity, and the process
