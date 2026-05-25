@@ -6,197 +6,193 @@
   <title>Shivam Sync</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: #1f1d1d;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
+    body{
+      background:#1f1d1d;
+      color:#f5f5f5;
+      font-family:Arial,sans-serif;
+      min-height:100vh;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 28px 55px;
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:28px 55px;
     }
 
-    .logo {
-      font-size: 42px;
-      font-weight: 400;
-      letter-spacing: 1px;
+    .logo{
+      font-size:42px;
+      font-weight:400;
+      letter-spacing:1px;
     }
 
-    .socials {
-      margin-top: 20px;
-      display: flex;
-      gap: 16px;
+    .socials{
+      margin-top:20px;
+      display:flex;
+      gap:16px;
     }
 
-    .socials a {
-      width: 38px;
-      height: 38px;
-      background: #2b2929;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
+    .socials a{
+      width:38px;
+      height:38px;
+      background:#2b2929;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:0.3s;
     }
 
-    .socials a:hover {
-      background: #3a3a3a;
-      transform: translateY(-2px);
+    .socials a:hover{
+      background:#3a3a3a;
+      transform:translateY(-2px);
     }
 
-    .socials img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
+    .socials img{
+      width:20px;
+      height:20px;
+      object-fit:contain;
     }
 
-    nav {
-      display: flex;
-      gap: 34px;
-      align-items: flex-start;
-      font-size: 20px;
+    nav{
+      display:flex;
+      gap:34px;
+      align-items:flex-start;
+      font-size:20px;
     }
 
-    .nav-item {
-      position: relative;
-      cursor: pointer;
+    .nav-item{
+      position:relative;
+      cursor:pointer;
     }
 
-    .nav-title {
-      margin-bottom: 18px;
+    .nav-title{
+      margin-bottom:18px;
     }
 
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 420px;
-      text-align: left;
-      background: rgba(30, 30, 30, 0.97);
-      border: 1px solid #333;
-      border-radius: 14px;
-      padding: 18px;
-      line-height: 1.8;
-      font-size: 15px;
-      z-index: 10;
-      max-height: 500px;
-      overflow-y: auto;
+    .dropdown{
+      display:none;
+      position:absolute;
+      top:35px;
+      left:50%;
+      transform:translateX(-50%);
+      min-width:180px;
+      text-align:center;
+      background:rgba(30,30,30,0.97);
+      border:1px solid #333;
+      border-radius:14px;
+      padding:14px;
+      line-height:1.8;
+      font-size:16px;
+      z-index:10;
     }
 
-    .nav-item:hover .dropdown {
-      display: block;
+    .nav-item:hover .dropdown{
+      display:block;
     }
 
     .dropdown a,
-    .dropdown p {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 4px 0;
+    .dropdown p{
+      display:block;
+      color:white;
+      text-decoration:none;
+      margin:4px 0;
     }
 
-    .main {
-      max-width: 760px;
-      margin: 110px auto 0;
-      text-align: center;
-      padding: 0 20px;
+    .main{
+      max-width:760px;
+      margin:110px auto 0;
+      text-align:center;
+      padding:0 20px;
     }
 
-    .profile {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 35px;
-      border: 2px solid #3a3a3a;
+    .profile{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:35px;
+      border:2px solid #3a3a3a;
     }
 
-    .about {
-      font-size: 20px;
-      line-height: 1.55;
-      color: #f1f1f1;
+    .about{
+      font-size:20px;
+      line-height:1.55;
+      color:#f1f1f1;
     }
 
-    .side-links {
-      position: fixed;
-      right: 55px;
-      bottom: 45px;
-      text-align: left;
-      font-size: 22px;
-      line-height: 2.2;
+    .side-links{
+      position:fixed;
+      right:55px;
+      bottom:45px;
+      text-align:left;
+      font-size:22px;
+      line-height:2.2;
     }
 
-    .side-links a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      transition: 0.3s;
+    .side-links a{
+      color:white;
+      text-decoration:none;
+      display:block;
+      transition:0.3s;
     }
 
-    .side-links a:hover {
-      opacity: 0.7;
+    .side-links a:hover{
+      opacity:0.7;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 120px;
-      padding: 25px;
-      color: #777;
-      font-size: 14px;
+    .footer{
+      text-align:center;
+      margin-top:120px;
+      padding:25px;
+      color:#777;
+      font-size:14px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width:800px){
 
-      header {
-        flex-direction: column;
-        padding: 25px;
-        gap: 35px;
+      header{
+        flex-direction:column;
+        padding:25px;
+        gap:35px;
       }
 
-      nav {
-        flex-wrap: wrap;
-        gap: 22px;
-        font-size: 18px;
+      nav{
+        flex-wrap:wrap;
+        gap:22px;
+        font-size:18px;
       }
 
-      .logo {
-        font-size: 36px;
+      .logo{
+        font-size:36px;
       }
 
-      .main {
-        margin-top: 50px;
+      .main{
+        margin-top:50px;
       }
 
-      .about {
-        font-size: 17px;
+      .about{
+        font-size:17px;
       }
 
-      .dropdown {
-        width: 300px;
-        font-size: 14px;
+      .side-links{
+        position:static;
+        text-align:center;
+        margin-top:40px;
+        margin-bottom:30px;
       }
 
-      .side-links {
-        position: static;
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 30px;
-      }
     }
 
   </style>
+
 </head>
 
 <body>
@@ -249,25 +245,7 @@
         <div class="nav-title">Letters</div>
 
         <div class="dropdown">
-
-          <p>
-            There is something quiet about learning.<br><br>
-
-            Not the loud kind that appears perfect from the outside, but the slower kind — the kind where understanding takes time, mistakes happen often, and progress feels almost invisible. Most days are spent figuring things out little by little, searching for answers, rebuilding ideas, and trying again after things fail.<br><br>
-
-            This site was created somewhere in the middle of that process.<br><br>
-
-            Not as a finished project, and not as something meant to look perfect, but simply as a small place on the internet to build, explore, and keep moving forward. Some parts of this space are unfinished, some ideas are still growing, and many things here will continue changing over time. That is part of the point.<br><br>
-
-            Technology moves fast. The internet moves even faster. It is easy to feel behind when everyone seems experienced, skilled, or already successful. But every person who builds something meaningful once started from confusion too — learning basics, fixing errors, and slowly improving through consistency.<br><br>
-
-            That is what this space represents.<br><br>
-
-            A reminder that growth does not happen instantly. Skills are built quietly, one step at a time. Curiosity matters more than perfection, and starting matters more than waiting for the “right time.”<br><br>
-
-            Maybe some resources here will help someone. Maybe a small idea or sentence stays with somebody for a while. And maybe this site itself becomes proof that even unfinished beginnings are worth creating.
-          </p>
-
+          <a href="letter.html">Built while learning</a>
         </div>
 
       </div>
@@ -310,14 +288,18 @@
     <img src="profile.jpg" alt="Profile Image" class="profile" />
 
     <p class="about">
+
       Welcome. I’m Shivam — exploring technology, creativity, and the process
       of building things step by step. This space is a small collection of ideas,
       resources, and experiments created while learning and growing along the journey.
       Some parts of this site may help you too, so feel free to explore — and if you
       need any help, you can contact me as well.
+
       <br><br>
+
       Nothing here is meant to be perfect. It’s simply a place to build,
       improve, and keep moving forward.
+
     </p>
 
   </main>
