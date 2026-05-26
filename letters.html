@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letters • Shivam Sync</title>
 
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      background:#030303;
+      color:#efe7d8;
+      font-family:Georgia,"Times New Roman",serif;
+      min-height:100vh;
+      padding:80px 24px;
+    }
+
+    .container{
+      max-width:850px;
+      margin:auto;
+    }
+
+    .title{
+      font-size:56px;
+      color:#f4eadc;
+      margin-bottom:14px;
+    }
+
+    .subtitle{
+      color:#9d9385;
+      line-height:1.8;
+      margin-bottom:70px;
+      font-size:18px;
+    }
+
+    .letters{
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    .letter-card{
+      display:block;
+      text-decoration:none;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:32px;
+      transition:.3s;
+      backdrop-filter:blur(12px);
+    }
+
+    .letter-card:hover{
+      transform:translateY(-5px);
+      border-color:#d8944e;
+      box-shadow:0 0 35px rgba(216,148,78,.12);
+    }
+
+    .letter-date{
+      color:#9e8e7b;
+      margin-bottom:12px;
+      font-size:15px;
+    }
+
+    .letter-title{
+      color:#f4eadc;
+      font-size:32px;
+      margin-bottom:14px;
+    }
+
+    .letter-preview{
+      color:#cfc3b3;
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    .back{
+      display:inline-block;
+      margin-top:70px;
+      color:#d8944e;
+      text-decoration:none;
+      font-size:18px;
+    }
+
+    @media(max-width:700px){
+      .title{ font-size:42px; }
+      .letter-title{ font-size:25px; }
+      .letter-preview{ font-size:16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1 class="title">Letters</h1>
+
+    <p class="subtitle">
+      Thoughts, reflections, unfinished ideas, and writings created while learning and growing through the process.
+    </p>
+
+    <div class="letters">
+
+      <a href="letter.html" class="letter-card">
+        <div class="letter-date">May 2026</div>
+        <div class="letter-title">Built While Learning</div>
+        <div class="letter-preview">
+          Nothing here began perfectly. This was built step by step through mistakes, curiosity, experimentation, and growth.
+        </div>
+      </a>
+
+    </div>
+
+    <a href="index.html" class="back">← Return Home</a>
+
+  </div>
+
+</body>
+</html>
