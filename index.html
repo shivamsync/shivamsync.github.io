@@ -54,7 +54,10 @@
       to{opacity:1;}
     }
 
-    header,main,.side-links,.footer{
+    header,
+    main,
+    .side-links,
+    .footer{
       position:relative;
       z-index:2;
     }
@@ -120,6 +123,8 @@
       color:#f2e6d7;
       padding-bottom:12px;
       transition:.3s;
+      display:block;
+      text-decoration:none;
     }
 
     .nav-title::after{
@@ -385,7 +390,7 @@
 
     <nav>
       <div class="nav-item">
-        <div class="nav-title">Home</div>
+        <a href="index.html" class="nav-title">Home</a>
       </div>
 
       <div class="nav-item">
@@ -399,21 +404,15 @@
       </div>
 
       <div class="nav-item">
-        <div class="nav-title">Letters</div>
-        <div class="dropdown">
-          <a href="letter.html">Built while learning</a>
-        </div>
+        <a href="letters.html" class="nav-title">Letters</a>
       </div>
 
       <div class="nav-item">
-        <div class="nav-title">Toolkit</div>
+        <div class="nav-title">Readings</div>
         <div class="dropdown">
-          <a href="https://code.visualstudio.com" target="_blank">VS Code</a>
-          <a href="https://github.com" target="_blank">GitHub</a>
-          <a href="https://vercel.com" target="_blank">Vercel</a>
-          <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
-          <a href="https://www.figma.com" target="_blank">Figma</a>
-          <a href="https://www.notion.so" target="_blank">Notion</a>
+          <a href="#">Currently Reading</a>
+          <a href="#">Favorite Books</a>
+          <a href="#">Quotes & Notes</a>
         </div>
       </div>
 
